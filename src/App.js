@@ -63,11 +63,11 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/change-password' render={() => (
-            <ChangePassword msgAlert={this.msgAlert} user={user} />
-          )} />
-          <AuthenticatedRoute user={user} path='/update-username' render={() => (
-            <UpdateUsername msgAlert={this.msgAlert} user={user} />
+          <AuthenticatedRoute user={user} path='/profile-settings' render={() => (
+            <Fragment>
+              <ChangePassword msgAlert={this.msgAlert} user={user} />
+              <UpdateUsername msgAlert={this.msgAlert} user={user} />
+            </Fragment>
           )} />
         </main>
       </Fragment>
