@@ -70,3 +70,13 @@ export const updateUsername = (username, user) => {
     }
   })
 }
+
+export const deleteAccount = user => {
+  return axios({
+    url: apiUrl + '/delete-account',
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Token token=${user.token}`
+    }
+  })
+}
