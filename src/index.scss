@@ -1,1 +1,32 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&family=Open+Sans&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.brand-name {
+  font-family: 'Lobster Two', cursive;
+  font-size: 32px;
+}
+
+.banner-img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.banner-text {
+  text-align: center;
+  font-size: 26px;
+}
+
+.my-navbar {
+  background-color: #AE8DAC;
+}
+
+.sign-in-link,
+.sign-up-link,
+.sign-in-link:hover,
+.sign-up-link:hover {
+  color: #AE8DAC;
+}
