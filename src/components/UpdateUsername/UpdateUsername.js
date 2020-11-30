@@ -47,8 +47,8 @@ class UpdateUsername extends Component {
     const { oldUsername, newUsername } = this.state
 
     return (
-      <div>
-        <div>
+      <div className="row">
+        <div className="col-sm-10 col-md-8 mx-auto mt-5">
           <h3>Update Username</h3>
           <Form onSubmit={this.onUpdateUsername}>
             <Form.Group controlId="oldUsername">
