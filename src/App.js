@@ -11,6 +11,7 @@ import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import UpdateUsername from './components/UpdateUsername/UpdateUsername'
 import DeleteAccount from './components/DeleteAccount/DeleteAccount'
+import LandingPage from './components/LandingPage/LandingPage'
 
 class App extends Component {
   constructor () {
@@ -55,6 +56,9 @@ class App extends Component {
           />
         ))}
         <main className="container">
+          <Route exact path='/' render={() => (
+            <LandingPage />
+          )} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
@@ -70,6 +74,9 @@ class App extends Component {
               <UpdateUsername msgAlert={this.msgAlert} user={user} />
               <DeleteAccount msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
             </Fragment>
+          )} />
+          <AuthenticatedRoute path='/chat' user={user} render={() => (
+            <p>Chat Landing Page</p>
           )} />
         </main>
       </Fragment>
