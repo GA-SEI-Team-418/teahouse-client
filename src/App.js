@@ -10,6 +10,7 @@ import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import UpdateUsername from './components/UpdateUsername/UpdateUsername'
+import DeleteAccount from './components/DeleteAccount/DeleteAccount'
 
 class App extends Component {
   constructor () {
@@ -67,6 +68,7 @@ class App extends Component {
             <Fragment>
               <ChangePassword msgAlert={this.msgAlert} user={user} />
               <UpdateUsername msgAlert={this.msgAlert} user={user} />
+              <DeleteAccount msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
             </Fragment>
           )} />
         </main>
