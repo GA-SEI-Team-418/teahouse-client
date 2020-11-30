@@ -73,7 +73,7 @@ class UpdateUsername extends Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
-            <Button type="submit">Submit</Button>
+            <Button type="submit" variant="outline-dark">Update Username</Button>
           </Form>
         </div>
       </div>
