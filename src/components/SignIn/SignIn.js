@@ -33,7 +33,7 @@ class SignIn extends Component {
         message: messages.signInSuccess,
         variant: 'success'
       }))
-      .then(() => history.push('/'))
+      .then(() => history.push('/chat'))
       .catch(error => {
         this.setState({ email: '', password: '' })
         msgAlert({
@@ -75,12 +75,14 @@ class SignIn extends Component {
               />
             </Form.Group>
             <Button
-              variant="primary"
+              variant="outline-dark"
               type="submit"
             >
-              Submit
+              Sign In
             </Button>
           </Form>
+          <br />
+          <p>Don't have an account? <a href="#sign-up" className="sign-up-link">Sign Up</a></p>
         </div>
       </div>
     )
