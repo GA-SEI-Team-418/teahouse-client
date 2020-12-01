@@ -1,33 +1,51 @@
-import React, { useState, useEffect, Fragment } from 'react'
-import socketIoClient from 'socket.io-client'
+import React from 'react'
 import { withRouter } from 'react-router-dom'
 
-import apiUrl from '../../apiConfig'
-const ENDPOINT = apiUrl
+import './chat.css'
+import useChat from './useChat'
 
-// followed tutorial on this site for initial setup
+// followed these tutorials for setup
 // https://www.valentinog.com/blog/socket-react/
+// https://medium.com/swlh/build-a-real-time-chat-app-with-react-hooks-and-socket-io-4859c9afecb0
 const Chat = props => {
-  const [response, setResponse] = useState('')
+  const [message, setMessage] = React.useState('')
+  const { messages, sendMessage } = useChat()
+  const username = props.user.username
 
-  useEffect(() => {
-    const socket = socketIoClient(ENDPOINT)
-    socket.on("FromAPI", data => {
-      setResponse(data)
-    })
+  const handleNewMessageChange = (event) => {
+    setMessage(event.target.value)
+  }
 
-    return () => socket.disconnect()
-  }, [])
+  const handleSendMessage = () => {
+    sendMessage(message, username)
+    setMessage("")
+  }
 
   return (
-    <Fragment>
-      <p>It's <time dateTime={response}>{response}</time></p>
-      <ul id='messages'></ul>
-      <form>
-        <input type='text' autoComplete='off'/>
-        <button type='submit'>Send</button>
-      </form>
-    </Fragment>
+    <div className="chat-room-container">
+      <div className="messages-container">
+        <ol className="messages-list">
+          {messages.map((message, i) => (
+            <li
+              key={i}
+              className={`message-item ${message.ownedByCurrentUser ? "my-message" : "received-message"
+                }`}
+            >
+              {message.ownedByCurrentUser ? `${message.body}` : `${message.owner}: ${message.body}`}
+            </li>
+          ))}
+        </ol>
+      </div>
+      <textarea
+        value={message}
+        onChange={handleNewMessageChange}
+        placeholder="Write message..."
+        className="new-message-input-field"
+      />
+      <button onClick={handleSendMessage} className="send-message-button">
+        Send
+      </button>
+    </div>
   )
 }
 
