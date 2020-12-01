@@ -12,6 +12,7 @@ import ChangePassword from './components/ChangePassword/ChangePassword'
 import UpdateUsername from './components/UpdateUsername/UpdateUsername'
 import DeleteAccount from './components/DeleteAccount/DeleteAccount'
 import LandingPage from './components/LandingPage/LandingPage'
+import Chat from './components/Chat/Chat'
 
 class App extends Component {
   constructor () {
@@ -76,7 +77,7 @@ class App extends Component {
             </Fragment>
           )} />
           <AuthenticatedRoute path='/chat' user={user} render={() => (
-            <p>Chat Landing Page</p>
+            <Chat />
           )} />
         </main>
       </Fragment>
