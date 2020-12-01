@@ -32,7 +32,7 @@ class UpdateUsername extends Component {
         message: messages.updateUsernameSuccess,
         variant: 'success'
       }))
-      .then(() => history.push('/'))
+      .then(() => history.push('/chat'))
       .catch(error => {
         this.setState({ oldUsername: '', newUsername: '' })
         msgAlert({
