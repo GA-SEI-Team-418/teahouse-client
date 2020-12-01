@@ -36,15 +36,17 @@ const Chat = props => {
           ))}
         </ol>
       </div>
+      <div class="d-flex flex-row">
       <textarea
         value={message}
         onChange={handleNewMessageChange}
         placeholder="Write message..."
-        className="new-message-input-field"
+        className="new-message-input-field col-8"
       />
-      <button onClick={handleSendMessage} className="send-message-button">
+      <button onClick={handleSendMessage} className="send-message-button col-4">
         Send
       </button>
+    </div>
     </div>
   )
 }
