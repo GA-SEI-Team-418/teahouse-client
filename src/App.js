@@ -77,7 +77,7 @@ class App extends Component {
             </Fragment>
           )} />
           <AuthenticatedRoute path='/chat' user={user} render={() => (
-            <Chat />
+            <Chat user={user}/>
           )} />
         </main>
       </Fragment>
