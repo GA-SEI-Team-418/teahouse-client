@@ -64,7 +64,6 @@ export const updateUsername = (username, user) => {
     },
     data: {
       username: {
-        old: username.oldUsername,
         new: username.newUsername
       }
     }

@@ -12,7 +12,6 @@ class UpdateUsername extends Component {
     super()
 
     this.state = {
-      oldUsername: '',
       newUsername: ''
     }
   }
@@ -24,9 +23,14 @@ class UpdateUsername extends Component {
   onUpdateUsername = event => {
     event.preventDefault()
 
-    const { msgAlert, history, user } = this.props
+    const { msgAlert, history, user, setUser } = this.props
 
     updateUsername(this.state, user)
+      .then(() => {
+        const updatedUser = user
+        updatedUser.username = this.state.newUsername
+        setUser(updatedUser)
+      })
       .then(() => msgAlert({
         heading: 'Update Username Success',
         message: messages.updateUsernameSuccess,
@@ -34,7 +38,7 @@ class UpdateUsername extends Component {
       }))
       .then(() => history.push('/chat'))
       .catch(error => {
-        this.setState({ oldUsername: '', newUsername: '' })
+        this.setState({ newUsername: '' })
         msgAlert({
           heading: 'Update Username Failed with error: ' + error.message,
           message: messages.updateUsernameFailure,
@@ -44,24 +48,13 @@ class UpdateUsername extends Component {
   }
 
   render () {
-    const { oldUsername, newUsername } = this.state
+    const { newUsername } = this.state
 
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
           <h3>Update Username</h3>
           <Form onSubmit={this.onUpdateUsername}>
-            <Form.Group controlId="oldUsername">
-              <Form.Label>Old Username</Form.Label>
-              <Form.Control
-                required
-                name="oldUsername"
-                value={oldUsername}
-                type="text"
-                placeholder="Old Username"
-                onChange={this.handleChange}
-              />
-            </Form.Group>
             <Form.Group controlId="newUsername">
               <Form.Label>New Username</Form.Label>
               <Form.Control

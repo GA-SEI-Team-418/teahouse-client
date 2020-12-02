@@ -38,7 +38,8 @@ https://github.com/pixochi/socket.io-react-hooks-chat/blob/master/client/src/Cha
 }
 
 .message-item {
-  width: 55%;
+  max-width: 55%;
+  width: fit-content;
   margin: 8px;
   padding: 10px 8px;
   word-break: break-word;

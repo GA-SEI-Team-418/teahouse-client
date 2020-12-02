@@ -72,7 +72,7 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/profile-settings' render={() => (
             <Fragment>
               <ChangePassword msgAlert={this.msgAlert} user={user} />
-              <UpdateUsername msgAlert={this.msgAlert} user={user} />
+              <UpdateUsername msgAlert={this.msgAlert} user={user} setUser={this.setUser} />
               <DeleteAccount msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
             </Fragment>
           )} />

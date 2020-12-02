@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 
-import { Button } from 'react-bootstrap'
+import Button from 'react-bootstrap/Button'
 
 const LandingPage = props => {
   const signUp = () => {

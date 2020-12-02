@@ -36,7 +36,7 @@ const Chat = props => {
           ))}
         </ol>
       </div>
-      <div class="d-flex flex-row">
+      <div className="d-flex flex-row">
       <textarea
         value={message}
         onChange={handleNewMessageChange}
