@@ -43,10 +43,9 @@ In planning for this project, we came together as a team to discuss how we wante
 
 #### Wireframe:
 
-![wireframe]
-https://i.imgur.com/ceKyD7N.png
-https://i.imgur.com/u7UcBxP.png
-https://i.imgur.com/4GH5Br0.png
-https://i.imgur.com/ZkaO1Qf.png
-https://i.imgur.com/N42dtsM.png
-https://i.imgur.com/EAzJOCI.png
+![wireframe 1](https://i.imgur.com/ceKyD7N.png)
+![wireframe 2](https://i.imgur.com/u7UcBxP.png)
+![wireframe 3](https://i.imgur.com/4GH5Br0.png)
+![wireframe 4](https://i.imgur.com/ZkaO1Qf.png)
+![wireframe 5](https://i.imgur.com/N42dtsM.png)
+![wireframe 6](https://i.imgur.com/EAzJOCI.png)
