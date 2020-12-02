@@ -1,6 +1,6 @@
 {
   "name": "teahouse-client",
-  "homepage": "https://ga-sei-team-418.github.io/teahouse-client/",
+  "homepage": "https://ga-sei-team-418.github.io/teahouse-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,7 +21,7 @@
     "react-dom": "^16.4.2",
     "react-router-dom": "^4.3.1",
     "resolve": "1.6.0",
-    "socket.io-client": "^3.0.3",
+    "socket.io-client": "^2.3.1",
     "url-loader": "0.6.2",
     "uuid": "^7.0.3",
     "whatwg-fetch": "^3.5.0"

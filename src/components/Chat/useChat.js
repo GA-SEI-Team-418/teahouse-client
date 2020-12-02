@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from 'react'
 import socketIOClient from 'socket.io-client'
 
-const SERVER_URL = "http://localhost:4741"
+import apiUrl from '../../apiConfig'
+const SERVER_URL = apiUrl
 
 const useChat = () => {
   const [messages, setMessages] = useState([])
