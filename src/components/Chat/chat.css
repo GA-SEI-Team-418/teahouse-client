@@ -1,0 +1,89 @@
+/*
+The basis of this file was found from this website:
+https://github.com/pixochi/socket.io-react-hooks-chat/blob/master/client/src/ChatRoom/ChatRoom.css
+*/
+.chat-room-container {
+  position: fixed;
+  left: 15%;
+  right: 15%;
+  top: 75px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
+}
+
+.messages-container {
+  flex: 1;
+  min-height: 75px;
+  overflow: auto;
+  border: 5px solid black;
+  border-radius: 7px 7px 0 0;
+}
+
+.messages-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.new-message-input-field {
+  height: 64px;
+  font-size: 16px;
+  padding: 8px 12px;
+  resize: none;
+  border-right: 5px solid black;
+  border-left: 5px solid black;
+  border-bottom: 5px solid black;
+  border-bottom-left-radius: 7px;
+}
+
+.message-item {
+  max-width: 55%;
+  width: fit-content;
+  margin: 8px;
+  padding: 10px 8px;
+  word-break: break-word;
+  border-radius: 4px;
+}
+
+.my-message {
+  background-color: #AE8DAC;
+  margin-left: auto;
+  text-align: right;
+  color: black;
+}
+
+.received-message {
+  background-color: #343A3F;
+  margin-right: auto;
+  color: white;
+}
+
+.send-message-button {
+  font-size: 28px;
+  font-weight: 600;
+  color: #000000;
+  background: #AE8DAC;
+  padding: 11px;
+  border: none;
+  border-bottom-right-radius: 7px;
+  align-self: flex-start;
+}
+
+.messages-container, .new-message-input-field, .send-message-button {
+  border-color: #9a9a9a;
+}
+
+@media screen and (max-width: 1024px) {
+  .chat-room-container {
+    left: 10%;
+    right: 10%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .chat-room-container {
+    left: 5%;
+    right: 5%;
+  }
+}
